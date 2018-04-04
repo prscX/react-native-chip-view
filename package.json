@@ -2,7 +2,7 @@
     "name": "react-native-chip-view",
     "version": "0.0.0",
     "description": "React Native: Material Chip View",
-    "main": "RNChipView.js",
+    "main": "./src/RNChipView.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
