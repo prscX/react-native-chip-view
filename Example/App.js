@@ -14,17 +14,35 @@ import {
 
 import RNChipView from 'react-native-chip-view'
 
+import user from './assets/user.png'
+import select from './assets/select.png'
+import cancel from './assets/cancel.png'
+
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return <View style={styles.container}>
         <RNChipView
-          title={'Pranav Chauhan'}
+          title={'Pranav'}
           titleStyle={{
-            color: '#FFF'
+            color: '#000'
           }}
           medium
-          cancelable
+          avatar={false}
+          avatar={user}
+          cancelable={false}
+          cancelable={cancel}
+          cancelable={true}
+          // cancelableStyle={{
+          //   backgroundColor: '#767676'
+          // }}
+          selectable={false}
+          selectable={select}
+          selectable={false}
+          // selectableStyle={{
+          //   backgroundColor: '#767676'
+          // }}
+          // backgroundColor={'#F1F1F1'}
         ></RNChipView>
       </View>;
   }

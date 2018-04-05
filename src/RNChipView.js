@@ -1,11 +1,19 @@
 import React, { Component } from "react";
-import { ViewPropTypes, View, Text, TouchableOpacity, Image } from "react-native";
+import {
+  ViewPropTypes,
+  View,
+  Text,
+  TouchableOpacity,
+  Image
+} from "react-native";
+
 import PropTypes from "prop-types";
 
 import Avatar from './Avatar'
 
 import style from "./RNChipView.style";
 
+import select from '../assets/select.png'
 import cancel from '../assets/cancel.png'
 
 class RNChipView extends Component {
@@ -14,115 +22,110 @@ class RNChipView extends Component {
     titleStyle: PropTypes.object,
 
     description: PropTypes.string,
-    descriptionStyle: PropTypes.string,
+    descriptionStyle: PropTypes.object,
 
-    avatar: PropTypes.bool,
-    avatarIcon: PropTypes.number,
+    avatar: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
+    avatarStyle: PropTypes.object,
 
-    cancelable: PropTypes.bool,
-    cancelIcon: PropTypes.number,
+    selectable: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
+    selectableStyle: PropTypes.object,
 
-    small: PropTypes.number,
-    medium: PropTypes.number,
-    large: PropTypes.number,
+    cancelable: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
+    cancelabelStyle: PropTypes.object,
 
-    opacity: PropTypes.bool,
-    highlight: PropTypes.bool,
-    bounce: PropTypes.bool,
-    ripple: PropTypes.bool,
-
-    backgroundColor: PropTypes.string
+    backgroundColor: PropTypes.string,
   };
 
   static defaultProps = {
     avatar: true,
-
-    cancelable: false,
-
-    small: false,
-    medium: true,
-    large: false,
-
-    opacity: false,
-    highlight: false,
-    bounce: false,
-    ripple: false
+    selectable: false,
+    cancelable: false
   };
 
   _renderAvatar() {
-    let { avatar, title } = this.props
+    let { avatar, avatarStyle, title } = this.props;
 
-    if (!avatar) return null;
+    if (avatar == false) return null;
 
-    let styles;
+    let styles = [];
+    styles.push(style.avatarContainer);
+    avatarStyle && styles.push(avatarStyle);
 
-    if (this.props.small) styles = style.avatarSmall;
-    else if (this.props.medium) styles = style.avatarMedium;
-    else if (this.props.large) styles = style.avatarLarge;
-    else styles = style.avatarMedium;
+    if (title && avatar === true) avatar = title.charAt(0);
 
-    if (title && avatar === true) avatar = title.charAt(0)
-
-    return <View style={[style.avatarContainer, styles]}>
+    return (
+      <View style={[, styles]}>
         <Avatar style={styles} avatar={avatar} />
-      </View>;
+      </View>
+    );
   }
 
   _renderAction() {
-    if (!this.props.cancelable) return null;
+    let {
+      selectable,
+      selectableStyle,
+      cancelable,
+      cancelableStyle,
+    } = this.props;
 
-    let styles;
+    let icon,
+      styles = [];
+    styles.push(style.actionContainer);
 
-    if (this.props.small) styles = style.cancelableSmall;
-    else if (this.props.medium) styles = style.cancelableMedium;
-    else if (this.props.large) styles = style.cancelableLarge;
-    else styles = style.cancelableMedium;
+    if (selectable) {
+      if (selectable == true) icon = select;
+      else icon = selectable;
 
-    return <View style={[style.cancelableContainer, styles]} >
-      <Image source={cancel} style={{
-        width: 20,
-        height: 20
-      }} />
-    </View>
+      selectableStyle && styles.push(selectableStyle);
+    } else if (cancelable) {
+      if (cancelable == true) icon = cancel;
+      else icon = cancelable;
+
+      cancelableStyle && styles.push(cancelableStyle);
+    } else return null;
+
+    return (
+      <View style={styles}>
+        <Image
+          source={icon}
+          style={style.actionIcon}
+        />
+      </View>
+    );
   }
 
   _renderContent() {
-    let { opacity, highlight, ripple, bounce, small, medium, large } = this.props
 
-    let Wrapper;
-    if (opacity) Wrapper = TouchableOpacity;
-    else if (highlight) {
-    } else if (bounce) {
-    } else if (ripple) {
-    } else Wrapper = TouchableOpacity;
+    let { titleStyle } = this.props
+    let styles = []
 
-    let titleStyle
-    if (small) titleStyle = style.titleSmall
-    else if (medium) titleStyle = style.titleMedium
-    else if (large) titleStyle = style.titleLarge 
+    styles.push(style.title)
+    titleStyle && styles.push(style.titleStyle)
 
-    return <Wrapper style={[style.contentContainer]}>
-        {this._renderAvatar()}
-        <View style={[style.subContentContainer]}>
-          <Text style={[titleStyle, ...this.props.titleStyle]}>
-            {this.props.title}
-          </Text>
+    return <TouchableOpacity style={{ flex: 1 }}>
+        <View style={[style.contentContainer]}>
+          {this._renderAvatar()}
+          <View style={[style.subContentContainer]}>
+            <Text style={[titleStyle, ...this.props.titleStyle]} ellipsizeMode={"middle"} numberOfLines={1}>
+              {this.props.title}
+            </Text>
+          </View>
           {this._renderAction()}
         </View>
-      </Wrapper>;
+      </TouchableOpacity>;
   }
 
   _renderContainer() {
-    let styles;
+    let { backgroundColor } = this.props
 
-    if (this.props.small) styles = style.small;
-    else if (this.props.medium) styles = style.medium;
-    else if (this.props.large) styles = style.large;
-    else styles = style.medium;
+    let styles = []
+    styles.push(style.container)
 
-    return (
-      <View style={[style.container, styles]}>{this._renderContent()}</View>
-    );
+    backgroundColor && styles.push({ backgroundColor: backgroundColor });
+
+    return <View style={styles}>
+        {this._renderContent()}
+      </View>;
   }
 
   render() {

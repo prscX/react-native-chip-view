@@ -34,108 +34,105 @@ import Z from "../assets/Z.jpg";
 
 class Avatar extends Component {
   static propTypes = {
-    avatar: PropTypes.number
+    avatar: PropTypes.oneOfType([PropTypes.bool, PropTypes.number])
   };
-  static defaultProps = {
-  }
+  static defaultProps = {};
 
-  _renderAvatar () {
-    let { avatar, renderAvatar } = this.props
-    if (renderAvatar) return renderAvatar()
+  _renderAvatar() {
+    let { avatar, renderAvatar } = this.props;
+    if (renderAvatar) return renderAvatar();
 
-    if (avatar) {
-    
-    }
+    let avatarIcon;
+    if (typeof avatar === "string") {
+      avatar = avatar.toUpperCase();
 
-    avatar && (avatar = avatar.toUpperCase())
-    
-    let avatarIcon
-    switch (avatar) {
-      case "A":
-          avatarIcon = A
-        break;
-      case "B":
+      switch (avatar) {
+        case "A":
+          avatarIcon = A;
+          break;
+        case "B":
           avatarIcon = B;
-        break;
-      case "C":
+          break;
+        case "C":
           avatarIcon = C;
-        break;
-      case "D":
+          break;
+        case "D":
           avatarIcon = D;
-        break;
-      case "E":
+          break;
+        case "E":
           avatarIcon = E;
-        break;
-      case "F":
+          break;
+        case "F":
           avatarIcon = F;
-        break;
-      case "G":
+          break;
+        case "G":
           avatarIcon = G;
-        break;
-      case "H":
+          break;
+        case "H":
           avatarIcon = H;
-        break;
-      case "I":
+          break;
+        case "I":
           avatarIcon = I;
-        break;
-      case "J":
+          break;
+        case "J":
           avatarIcon = J;
-        break;
-      case "K":
+          break;
+        case "K":
           avatarIcon = K;
-        break;
-      case "L":
+          break;
+        case "L":
           avatarIcon = L;
-        break;
-      case "M":
+          break;
+        case "M":
           avatarIcon = M;
-        break;
-      case "N":
+          break;
+        case "N":
           avatarIcon = N;
-        break;
-      case "O":
+          break;
+        case "O":
           avatarIcon = O;
-        break;
-      case "P":
+          break;
+        case "P":
           avatarIcon = P;
-        break;
-      case "Q":
+          break;
+        case "Q":
           avatarIcon = Q;
-        break;
-      case "R":
+          break;
+        case "R":
           avatarIcon = R;
-        break;
-      case "S":
+          break;
+        case "S":
           avatarIcon = S;
-        break;
-      case "T":
+          break;
+        case "T":
           avatarIcon = T;
-        break;
-      case "U":
+          break;
+        case "U":
           avatarIcon = U;
-        break;
-      case "V":
+          break;
+        case "V":
           avatarIcon = V;
-        break;
-      case "W":
+          break;
+        case "W":
           avatarIcon = W;
-        break;
-      case "X":
+          break;
+        case "X":
           avatarIcon = X;
-        break;
-      case "Y":
+          break;
+        case "Y":
           avatarIcon = Y;
-        break;
-      case "Z":
+          break;
+        case "Z":
           avatarIcon = Z;
-        break;
-    }
+          break;
+      }
+    } else avatarIcon = avatar;
 
-    return <Image source={avatarIcon} style={[style.container]} ></Image>
+    return <Image source={avatarIcon} style={[style.container]} />;
   }
 
-  render () {
-    return this._renderAvatar()
+  render() {
+    return this._renderAvatar();
   }
 }
 
