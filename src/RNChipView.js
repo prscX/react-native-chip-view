@@ -21,9 +21,6 @@ class RNChipView extends Component {
     title: PropTypes.string,
     titleStyle: PropTypes.object,
 
-    description: PropTypes.string,
-    descriptionStyle: PropTypes.object,
-
     avatar: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
     avatarStyle: PropTypes.object,
 
@@ -34,6 +31,8 @@ class RNChipView extends Component {
     cancelabelStyle: PropTypes.object,
 
     backgroundColor: PropTypes.string,
+    minWidth: PropTypes.number,
+    height: PropTypes.height
   };
 
   static defaultProps = {
