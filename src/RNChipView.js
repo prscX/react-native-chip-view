@@ -43,13 +43,15 @@ class RNChipView extends Component {
   };
 
   _renderAvatar() {
-    let { avatar, avatarStyle, title } = this.props;
+    let { avatar, avatarStyle, height, title } = this.props;
 
     if (avatar == false) return null;
 
     let styles = [];
     styles.push(style.avatarContainer);
     avatarStyle && styles.push(avatarStyle);
+
+    height && styles.push({ width: height, height: height, borderRadius: height })
 
     if (title && avatar === true) avatar = title.charAt(0);
 
@@ -66,11 +68,19 @@ class RNChipView extends Component {
       selectableStyle,
       cancelable,
       cancelableStyle,
+      height
     } = this.props;
 
-    let icon,
-      styles = [];
+    let icon, styles = [], actionStyle = []
     styles.push(style.actionContainer);
+    actionStyle.push(style.actionIcon)
+
+    height && styles.push({
+        width: height / 2,
+        height: height / 2,
+        borderRadius: height / 2
+      });
+    height && actionStyle.push({ width: height / 3, height: height / 3 });
 
     if (selectable) {
       if (selectable == true) icon = select;
@@ -84,29 +94,27 @@ class RNChipView extends Component {
       cancelableStyle && styles.push(cancelableStyle);
     } else return null;
 
-    return (
-      <View style={styles}>
-        <Image
-          source={icon}
-          style={style.actionIcon}
-        />
-      </View>
-    );
+    return <View style={styles}>
+        <Image source={icon} style={actionStyle} />
+      </View>;
   }
 
   _renderContent() {
 
-    let { titleStyle } = this.props
-    let styles = []
+    let { titleStyle, maxWidth } = this.props
+    let styles = [], subStyles = []
 
     styles.push(style.title)
     titleStyle && styles.push(style.titleStyle)
 
+    subStyles.push(style.subContentContainer)
+    maxWidth && styles.push({ maxWidth: maxWidth });
+
     return <TouchableOpacity style={{ flex: 1 }}>
         <View style={[style.contentContainer]}>
           {this._renderAvatar()}
-          <View style={[style.subContentContainer]}>
-            <Text style={[titleStyle, ...this.props.titleStyle]} ellipsizeMode={"middle"} numberOfLines={1}>
+          <View style={[subStyles]}>
+            <Text style={[styles]} ellipsizeMode={"middle"} numberOfLines={1}>
               {this.props.title}
             </Text>
           </View>
@@ -116,12 +124,13 @@ class RNChipView extends Component {
   }
 
   _renderContainer() {
-    let { backgroundColor } = this.props
+    let { backgroundColor, height } = this.props
 
     let styles = []
     styles.push(style.container)
 
     backgroundColor && styles.push({ backgroundColor: backgroundColor });
+    height && styles.push({ height: height, borderRadius: height  })
 
     return <View style={styles}>
         {this._renderContent()}

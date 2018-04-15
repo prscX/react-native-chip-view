@@ -34,7 +34,7 @@ import Z from "../assets/Z.jpg";
 
 class Avatar extends Component {
   static propTypes = {
-    avatar: PropTypes.oneOfType([PropTypes.bool, PropTypes.number])
+    avatar: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string])
   };
   static defaultProps = {};
 

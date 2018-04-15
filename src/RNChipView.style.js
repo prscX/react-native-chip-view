@@ -9,13 +9,15 @@ const style = StyleSheet.create({
   contentContainer: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    height: '100%'
   },
   subContentContainer: {
     maxWidth: 300,
     flexDirection: "row",
     alignItems: "center",
-    paddingLeft: 8
+    paddingLeft: 8,
+    paddingRight: 8
   },
   avatarContainer: {
     overflow: "hidden",
@@ -34,11 +36,11 @@ const style = StyleSheet.create({
     marginLeft: 8
   },
   actionIcon: {
-    width: 12,
-    height: 12
+    width: 10,
+    height: 10
   },
   title: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: "bold",
     color: "#5f5f5f"
   }

@@ -22,12 +22,58 @@ type Props = {};
 export default class App extends Component<Props> {
   render() {
     return <View style={styles.container}>
+        <View style={{ height: 10 }}></View>
         <RNChipView
-          title={'Pranav'}
+          title={'prscX'}
+          avatar={false}
+        />
+        <RNChipView
+          title={'prscX'}
+        />
+        <RNChipView
+          title={'prscX'}
+          avatar={user}
+        />
+        <RNChipView
+          title={'prscX'}
+          avatar={user}
+          selectable={true}
+        />
+        <RNChipView
+          title={'prscX'}
+          avatar={user}
+          cancelable={true}
+        />
+        <RNChipView
+          title={'Pranav Raj Singh Chauhan'}
+          avatar={false}
+        />
+        <RNChipView
+          title={'Chauhan Raj Singh Pranav'}
+        />
+        <RNChipView
+          title={'Pranav Raj Singh Chauhan'}
+          avatar={user}
+        />
+        <RNChipView
+          title={'Pranav Raj Singh Chauhan'}
+          avatar={user}
+          selectable={true}
+        />
+        <RNChipView
+          title={'Pranav Raj Singh Chauhan'}
+          avatar={user}
+          cancelable={true}
+        />
+        <RNChipView
+          title={'Pranav Raj Singh Chauhan, Pranav Raj Singh Chauhan'}
+          avatar={user}
+        />
+        <RNChipView
+          title={'Pranav Raj Singh Chauhan'}
           titleStyle={{
             color: '#000'
           }}
-          medium
           avatar={false}
           avatar={user}
           cancelable={false}
@@ -43,7 +89,9 @@ export default class App extends Component<Props> {
           //   backgroundColor: '#767676'
           // }}
           // backgroundColor={'#F1F1F1'}
-        ></RNChipView>
+          maxWidth={500}
+          height={100}
+        />
       </View>;
   }
 }
@@ -51,7 +99,7 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   }
