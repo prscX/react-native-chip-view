@@ -37,9 +37,9 @@ Chips can be used for various types of entities, including free form text, prede
 | `selectableStyle`       | `string`     |         | Specify custom selectable style
 | `cancelable`       | `string`     |         | - Specify true in case you need chip as cancelable. - Specify cancelable icon in case you want to pass your own icon
 | `cancelableStyle`       | `string`     |         | Specify custom cancelable style
-| `backgroundColor`       | `string`     |    #dedede    | Specify chip background color
-| `minWidth`       | `string`     |    300     | Specify chip min width
-| `height`       | `string`     |    40     | Specify chip height
+| `backgroundColor`       | `string`     |    `#dedede`    | Specify chip background color
+| `minWidth`       | `string`     |    `300`     | Specify chip min width
+| `height`       | `string`     |    `40`     | Specify chip height
 
 
 ## Contribution
