@@ -32,7 +32,7 @@ class RNChipView extends Component {
 
     backgroundColor: PropTypes.string,
     minWidth: PropTypes.number,
-    height: PropTypes.height
+    height: PropTypes.number
   };
 
   static defaultProps = {
