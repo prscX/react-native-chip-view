@@ -4,32 +4,32 @@ import PropTypes from "prop-types";
 
 import style from './Avatar.style'
 
-import A from '../assets/A.jpg'
-import B from "../assets/B.jpg";
-import C from "../assets/C.jpg";
-import D from "../assets/D.jpg";
-import E from "../assets/E.jpg";
-import F from "../assets/F.jpg";
-import G from "../assets/G.jpg";
-import H from "../assets/H.jpg";
-import I from "../assets/I.jpg";
-import J from "../assets/J.jpg";
-import K from "../assets/K.jpg";
-import L from "../assets/L.jpg";
-import M from "../assets/M.jpg";
-import N from "../assets/N.jpg";
-import O from "../assets/O.jpg";
-import P from "../assets/P.jpg";
-import Q from "../assets/Q.jpg";
-import R from "../assets/R.jpg";
-import S from "../assets/S.jpg";
-import T from "../assets/T.jpg";
-import U from "../assets/U.jpg";
-import V from "../assets/V.jpg";
-import W from "../assets/W.jpg";
-import X from "../assets/X.jpg";
-import Y from "../assets/Y.jpg";
-import Z from "../assets/Z.jpg";
+import A from "../assets/A.png"
+import B from "../assets/B.png"
+import C from "../assets/C.png"
+import D from "../assets/D.png"
+import E from "../assets/E.png"
+import F from "../assets/F.png"
+import G from "../assets/G.png"
+import H from "../assets/H.png"
+import I from "../assets/I.png"
+import J from "../assets/J.png"
+import K from "../assets/K.png"
+import L from "../assets/L.png"
+import M from "../assets/M.png"
+import N from "../assets/N.png"
+import O from "../assets/O.png"
+import P from "../assets/P.png"
+import Q from "../assets/Q.png"
+import R from "../assets/R.png"
+import S from "../assets/S.png"
+import T from "../assets/T.png"
+import U from "../assets/U.png"
+import V from "../assets/U.png"
+import W from "../assets/W.png"
+import X from "../assets/X.png"
+import Y from "../assets/Y.png"
+import Z from "../assets/Z.png"
 
 
 class Avatar extends Component {

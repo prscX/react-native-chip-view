@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 
-import RNChipView from 'react-native-chip-view'
+import { RNChipView } from 'react-native-chip-view'
 
 import user from './assets/user.png'
 import select from './assets/select.png'

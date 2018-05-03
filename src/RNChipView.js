@@ -141,4 +141,4 @@ class RNChipView extends Component {
   }
 }
 
-export default RNChipView;
+export { RNChipView }

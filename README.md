@@ -25,6 +25,20 @@ Chips can be used for various types of entities, including free form text, prede
 
 <img src='./assets/hero.png' width="600" height="600">
 
+## Usage
+
+```javascript
+
+import { RNChipView } from 'react-native-chip-view'
+
+<RNChipView
+  title={'prscX'}
+  avatar={false}
+/>
+
+```
+
+
 ## Props
 
 | Prop              | Type       | Default | Note                                                                                                       |
