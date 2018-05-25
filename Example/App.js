@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 
 import { RNChipView } from 'react-native-chip-view'
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import user from './assets/user.png'
 import select from './assets/select.png'
@@ -57,17 +58,20 @@ export default class App extends Component<Props> {
         />
         <RNChipView
           title={'Pranav Raj Singh Chauhan'}
-          avatar={user}
+          avatar={<Icon name="search" size={40} color="#000" />}
           selectable={true}
+          selectable={<Icon name="rocket" size={10} color="#900" />}
         />
         <RNChipView
           title={'Pranav Raj Singh Chauhan'}
           avatar={user}
           cancelable={true}
+          cancelable={<Icon name="save" size={10} color="#900" />}
         />
         <RNChipView
           title={'Pranav Raj Singh Chauhan, Pranav Raj Singh Chauhan'}
           avatar={user}
+          ellipsizeMode={'tail'}
         />
         <RNChipView
           title={'Pranav Raj Singh Chauhan'}
@@ -91,6 +95,19 @@ export default class App extends Component<Props> {
           // backgroundColor={'#F1F1F1'}
           maxWidth={500}
           height={100}
+          borderRadius={10}
+          onPress={() => {
+            console.log('pressed')
+          }}
+          // containerStyle={{
+          //   backgroundColor: "#000",
+          // }}
+          // contentContainerStyle={{
+          //   flex: 1
+          // }}
+          // subContentContainerStyle={{
+          //   flex: 1
+          // }}
         />
       </View>;
   }

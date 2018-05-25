@@ -1,6 +1,6 @@
 {
     "name": "react-native-chip-view",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "React Native: Material Chip View",
     "main": "./src/RNChipView.js",
     "scripts": {
@@ -18,7 +18,7 @@
     "dependencies": {
     },
     "devDependencies": {
-        "prettier-pack": "0.0.5"
+        "prettier-pack": "0.0.6"
     },
     "peerDependencies": {}
 }

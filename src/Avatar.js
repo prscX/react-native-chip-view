@@ -34,7 +34,7 @@ import Z from "../assets/Z.png"
 
 class Avatar extends Component {
   static propTypes = {
-    avatar: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string])
+    avatar: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string, PropTypes.object])
   };
   static defaultProps = {};
 
@@ -48,87 +48,88 @@ class Avatar extends Component {
 
       switch (avatar) {
         case "A":
-          avatarIcon = A;
+          avatarIcon = <Image source={A} style={[style.container]} />;
           break;
         case "B":
-          avatarIcon = B;
+          avatarIcon = <Image source={B} style={[style.container]} />;
           break;
         case "C":
-          avatarIcon = C;
+          avatarIcon = <Image source={C} style={[style.container]} />;
           break;
         case "D":
-          avatarIcon = D;
+          avatarIcon = <Image source={D} style={[style.container]} />;
           break;
         case "E":
-          avatarIcon = E;
+          avatarIcon = <Image source={E} style={[style.container]} />;
           break;
         case "F":
-          avatarIcon = F;
+          avatarIcon = <Image source={F} style={[style.container]} />;
           break;
         case "G":
-          avatarIcon = G;
+          avatarIcon = <Image source={G} style={[style.container]} />;
           break;
         case "H":
-          avatarIcon = H;
+          avatarIcon = <Image source={H} style={[style.container]} />;
           break;
         case "I":
-          avatarIcon = I;
+          avatarIcon = <Image source={I} style={[style.container]} />;
           break;
         case "J":
-          avatarIcon = J;
+          avatarIcon = <Image source={J} style={[style.container]} />;
           break;
         case "K":
-          avatarIcon = K;
+          avatarIcon = <Image source={K} style={[style.container]} />;
           break;
         case "L":
-          avatarIcon = L;
+          avatarIcon = <Image source={L} style={[style.container]} />;
           break;
         case "M":
-          avatarIcon = M;
+          avatarIcon = <Image source={M} style={[style.container]} />;
           break;
         case "N":
-          avatarIcon = N;
+          avatarIcon = <Image source={N} style={[style.container]} />;
           break;
         case "O":
-          avatarIcon = O;
+          avatarIcon = <Image source={O} style={[style.container]} />;
           break;
         case "P":
-          avatarIcon = P;
+          avatarIcon = <Image source={P} style={[style.container]} />;
           break;
         case "Q":
-          avatarIcon = Q;
+          avatarIcon = <Image source={Q} style={[style.container]} />;
           break;
         case "R":
-          avatarIcon = R;
+          avatarIcon = <Image source={R} style={[style.container]} />;
           break;
         case "S":
-          avatarIcon = S;
+          avatarIcon = <Image source={S} style={[style.container]} />;
           break;
         case "T":
-          avatarIcon = T;
+          avatarIcon = <Image source={T} style={[style.container]} />;
           break;
         case "U":
-          avatarIcon = U;
+          avatarIcon = <Image source={U} style={[style.container]} />;
           break;
         case "V":
-          avatarIcon = V;
+          avatarIcon = <Image source={V} style={[style.container]} />;
           break;
         case "W":
-          avatarIcon = W;
+          avatarIcon = <Image source={W} style={[style.container]} />;
           break;
         case "X":
-          avatarIcon = X;
+          avatarIcon = <Image source={X} style={[style.container]} />;
           break;
         case "Y":
-          avatarIcon = Y;
+          avatarIcon = <Image source={Y} style={[style.container]} />;
           break;
         case "Z":
-          avatarIcon = Z;
+          avatarIcon = <Image source={Z} style={[style.container]} />;
           break;
       }
-    } else avatarIcon = avatar;
+    } else if (typeof avatar === 'number') avatarIcon = <Image source={avatar} style={[style.container]} />;
+    else avatarIcon = avatar
 
-    return <Image source={avatarIcon} style={[style.container]} />;
+    return avatarIcon
   }
 
   render() {

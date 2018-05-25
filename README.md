@@ -45,15 +45,18 @@ import { RNChipView } from 'react-native-chip-view'
 | ----------------- | ---------- | ------- | ---------------------------------------------------------------------------------------------------------- |
 | `title`       | `string`     |        | Specify label wants to show. **Required**
 | `titleStyle`       | `object`     |         | Specify style wants to apply on title
-| `avatar`       | `bool, number`     |         | - Specify true in case you need avatar. - Specify avatar in case you want custom avatar
+| `onPress`       | `func`     |       | Specify event handler for on press
+| `avatar`       | `bool, number, component`     |         | - Specify true in case you need avatar. - Specify avatar in case you want custom avatar
 | `avatarStyle`       | `object`     |         | Specify custom avatar style
-| `selectable`       | `bool, number`     |         | - Specify true in case you need chip as selection. - Specify selection icon in case you want to pass your own icon
+| `selectable`       | `bool, number, component`     |         | - Specify true in case you need chip as selection. - Specify selection icon in case you want to pass your own icon
 | `selectableStyle`       | `string`     |         | Specify custom selectable style
-| `cancelable`       | `string`     |         | - Specify true in case you need chip as cancelable. - Specify cancelable icon in case you want to pass your own icon
+| `cancelable`       | `bool, number, component`     |         | - Specify true in case you need chip as cancelable. - Specify cancelable icon in case you want to pass your own icon
 | `cancelableStyle`       | `string`     |         | Specify custom cancelable style
 | `backgroundColor`       | `string`     |    `#dedede`    | Specify chip background color
-| `minWidth`       | `string`     |    `300`     | Specify chip min width
+| `maxWidth`       | `string`     |    `300`     | Specify chip max width
 | `height`       | `string`     |    `40`     | Specify chip height
+| `borderRadius`       | `string`     |    `40`     | Specify container border radius
+| `ellipsizeMode`       | `string`     |    `middle`     | Specify text ellipsize mode
 
 
 ## Contribution
