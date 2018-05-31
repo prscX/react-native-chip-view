@@ -1,6 +1,6 @@
 {
     "name": "react-native-chip-view",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "React Native: Material Chip View",
     "main": "./src/RNChipView.js",
     "scripts": {
