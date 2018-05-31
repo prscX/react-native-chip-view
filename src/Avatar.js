@@ -42,7 +42,7 @@ class Avatar extends Component {
     let { avatar, renderAvatar } = this.props;
     if (renderAvatar) return renderAvatar();
 
-    let avatarIcon;
+    let avatarIcon = null
     if (typeof avatar === "string") {
       avatar = avatar.toUpperCase();
 

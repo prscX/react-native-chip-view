@@ -145,7 +145,7 @@ class RNChipView extends Component {
     contentContainerStyles.push(style.contentContainerStyle);
 
     styles.push(style.title);
-    titleStyle && styles.push(style.titleStyle);
+    titleStyle && styles.push(titleStyle);
 
     subStyles.push(style.subContentContainer);
     subStyles.push(subContentContainerStyle);
