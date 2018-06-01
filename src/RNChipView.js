@@ -19,7 +19,7 @@ import cancel from '../assets/cancel.png'
 class RNChipView extends Component {
   static propTypes = {
     title: PropTypes.string,
-    titleStyle: PropTypes.object,
+    titleStyle: PropTypes.oneOfType(PropTypes.number, PropTypes.object),
 
     avatar: PropTypes.oneOfType([
       PropTypes.bool,
