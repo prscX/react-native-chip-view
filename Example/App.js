@@ -30,19 +30,17 @@ export default class App extends Component<Props> {
         />
         <RNChipView
           title={'prscX'}
-        />
-        <RNChipView
-          title={'prscX'}
           avatar={user}
         />
         <RNChipView
           title={'prscX'}
-          avatar={user}
+        />
+        <RNChipView
+          title={'rpscX'}
           selectable={true}
         />
         <RNChipView
-          title={'prscX'}
-          avatar={user}
+          title={'sprcX'}
           cancelable={true}
         />
         <RNChipView
@@ -53,24 +51,22 @@ export default class App extends Component<Props> {
           title={'Chauhan Raj Singh Pranav'}
         />
         <RNChipView
-          title={'Pranav Raj Singh Chauhan'}
-          avatar={user}
+          title={'Raj Pranav Singh Chauhan'}
         />
         <RNChipView
-          title={'Pranav Raj Singh Chauhan'}
+          title={'Singh Pranav Raj Chauhan'}
           avatar={<Icon name="search" size={40} color="#000" />}
           selectable={true}
           selectable={<Icon name="rocket" size={10} color="#900" />}
         />
         <RNChipView
-          title={'Pranav Raj Singh Chauhan'}
-          avatar={user}
+          title={'A Pranav Raj Singh Chauhan'}
           cancelable={true}
           cancelable={<Icon name="save" size={10} color="#900" />}
         />
         <RNChipView
-          title={'Pranav Raj Singh Chauhan, Pranav Raj Singh Chauhan'}
-          avatar={user}
+          title={'B Pranav Raj Singh Chauhan, Pranav Raj Singh Chauhan'}
+          theme={1}
           ellipsizeMode={'tail'}
         />
         <RNChipView

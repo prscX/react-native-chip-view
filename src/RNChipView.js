@@ -17,6 +17,7 @@ import select from '../assets/select.png'
 import cancel from '../assets/cancel.png'
 
 class RNChipView extends Component {
+
   static propTypes = {
     title: PropTypes.string,
     titleStyle: PropTypes.oneOfType(PropTypes.number, PropTypes.object),
@@ -54,17 +55,21 @@ class RNChipView extends Component {
     subContentContainerStyle: PropTypes.oneOfType(
       PropTypes.number,
       PropTypes.object
-    )
+    ),
+
+    theme: PropTypes.number
   };
 
   static defaultProps = {
     avatar: true,
     selectable: false,
-    cancelable: false
+    cancelable: false,
+
+    theme: Avatar.Themes.Material
   };
 
   _renderAvatar() {
-    let { avatar, avatarStyle, height, title } = this.props;
+    let { avatar, avatarStyle, height, title, theme } = this.props;
 
     if (avatar == false) return null;
 
@@ -79,7 +84,7 @@ class RNChipView extends Component {
 
     return (
       <View style={[, styles]}>
-        <Avatar style={styles} avatar={avatar} />
+        <Avatar style={styles} avatar={avatar} theme={theme} />
       </View>
     );
   }

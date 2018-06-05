@@ -4,42 +4,76 @@ import PropTypes from "prop-types";
 
 import style from './Avatar.style'
 
-import A from "../assets/A.png"
-import B from "../assets/B.png"
-import C from "../assets/C.png"
-import D from "../assets/D.png"
-import E from "../assets/E.png"
-import F from "../assets/F.png"
-import G from "../assets/G.png"
-import H from "../assets/H.png"
-import I from "../assets/I.png"
-import J from "../assets/J.png"
-import K from "../assets/K.png"
-import L from "../assets/L.png"
-import M from "../assets/M.png"
-import N from "../assets/N.png"
-import O from "../assets/O.png"
-import P from "../assets/P.png"
-import Q from "../assets/Q.png"
-import R from "../assets/R.png"
-import S from "../assets/S.png"
-import T from "../assets/T.png"
-import U from "../assets/U.png"
-import V from "../assets/U.png"
-import W from "../assets/W.png"
-import X from "../assets/X.png"
-import Y from "../assets/Y.png"
-import Z from "../assets/Z.png"
+
+import MaterialA from "../assets/material/A.png";
+import MaterialB from "../assets/material/B.png";
+import MaterialC from "../assets/material/C.png";
+import MaterialD from "../assets/material/D.png";
+import MaterialE from "../assets/material/E.png";
+import MaterialF from "../assets/material/F.png";
+import MaterialG from "../assets/material/G.png";
+import MaterialH from "../assets/material/H.png";
+import MaterialI from "../assets/material/I.png";
+import MaterialJ from "../assets/material/J.png";
+import MaterialK from "../assets/material/K.png";
+import MaterialL from "../assets/material/L.png";
+import MaterialM from "../assets/material/M.png";
+import MaterialN from "../assets/material/N.png";
+import MaterialO from "../assets/material/O.png";
+import MaterialP from "../assets/material/P.png";
+import MaterialQ from "../assets/material/Q.png";
+import MaterialR from "../assets/material/R.png";
+import MaterialS from "../assets/material/S.png";
+import MaterialT from "../assets/material/T.png";
+import MaterialU from "../assets/material/U.png";
+import MaterialV from "../assets/material/U.png";
+import MaterialW from "../assets/material/W.png";
+import MaterialX from "../assets/material/X.png";
+import MaterialY from "../assets/material/Y.png";
+import MaterialZ from "../assets/material/Z.png";
+
+
+import FlatA from "../assets/flat/A.png";
+import FlatB from "../assets/flat/B.png";
+import FlatC from "../assets/flat/C.png";
+import FlatD from "../assets/flat/D.png";
+import FlatE from "../assets/flat/E.png";
+import FlatF from "../assets/flat/F.png";
+import FlatG from "../assets/flat/G.png";
+import FlatH from "../assets/flat/H.png";
+import FlatI from "../assets/flat/I.png";
+import FlatJ from "../assets/flat/J.png";
+import FlatK from "../assets/flat/K.png";
+import FlatL from "../assets/flat/L.png";
+import FlatM from "../assets/flat/M.png";
+import FlatN from "../assets/flat/N.png";
+import FlatO from "../assets/flat/O.png";
+import FlatP from "../assets/flat/P.png";
+import FlatQ from "../assets/flat/Q.png";
+import FlatR from "../assets/flat/R.png";
+import FlatS from "../assets/flat/S.png";
+import FlatT from "../assets/flat/T.png";
+import FlatU from "../assets/flat/U.png";
+import FlatV from "../assets/flat/U.png";
+import FlatW from "../assets/flat/W.png";
+import FlatX from "../assets/flat/X.png";
+import FlatY from "../assets/flat/Y.png";
+import FlatZ from "../assets/flat/Z.png";
 
 
 class Avatar extends Component {
+  static Themes = {
+    Material: 0,
+    Flat: 1
+  }
+
   static propTypes = {
-    avatar: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string, PropTypes.object])
+    avatar: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string, PropTypes.object]),
+    theme: PropTypes.number
   };
-  static defaultProps = {};
 
   _renderAvatar() {
-    let { avatar, renderAvatar } = this.props;
+    let { avatar, renderAvatar, theme } = this.props;
     if (renderAvatar) return renderAvatar();
 
     let avatarIcon = null
@@ -48,82 +82,134 @@ class Avatar extends Component {
 
       switch (avatar) {
         case "A":
-          avatarIcon = <Image source={A} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatA} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialA} style={[style.container]} />;
+          
           break;
         case "B":
-          avatarIcon = <Image source={B} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatB} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialB} style={[style.container]} />;
+
           break;
         case "C":
-          avatarIcon = <Image source={C} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatC} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialC} style={[style.container]} />;
+
           break;
         case "D":
-          avatarIcon = <Image source={D} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatD} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialD} style={[style.container]} />;
+
           break;
         case "E":
-          avatarIcon = <Image source={E} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatE} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialE} style={[style.container]} />;
+
           break;
         case "F":
-          avatarIcon = <Image source={F} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatF} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialF} style={[style.container]} />;
+
           break;
         case "G":
-          avatarIcon = <Image source={G} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatG} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialG} style={[style.container]} />;
+
           break;
         case "H":
-          avatarIcon = <Image source={H} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatH} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialH} style={[style.container]} />;
+
           break;
         case "I":
-          avatarIcon = <Image source={I} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatI} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialI} style={[style.container]} />;
+
           break;
         case "J":
-          avatarIcon = <Image source={J} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatJ} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialJ} style={[style.container]} />;
+
           break;
         case "K":
-          avatarIcon = <Image source={K} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatK} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialK} style={[style.container]} />;
+
           break;
         case "L":
-          avatarIcon = <Image source={L} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatL} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialL} style={[style.container]} />;
+
           break;
         case "M":
-          avatarIcon = <Image source={M} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatM} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialM} style={[style.container]} />;
+
           break;
         case "N":
-          avatarIcon = <Image source={N} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatN} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialN} style={[style.container]} />;
+
           break;
         case "O":
-          avatarIcon = <Image source={O} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatO} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialO} style={[style.container]} />;
+
           break;
         case "P":
-          avatarIcon = <Image source={P} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatP} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialP} style={[style.container]} />;
+
           break;
         case "Q":
-          avatarIcon = <Image source={Q} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatQ} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialQ} style={[style.container]} />;
+
           break;
         case "R":
-          avatarIcon = <Image source={R} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatR} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialR} style={[style.container]} />;
+
           break;
         case "S":
-          avatarIcon = <Image source={S} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatS} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialS} style={[style.container]} />;
+
           break;
         case "T":
-          avatarIcon = <Image source={T} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatT} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialT} style={[style.container]} />;
+
           break;
         case "U":
-          avatarIcon = <Image source={U} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatU} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialU} style={[style.container]} />;
+
           break;
         case "V":
-          avatarIcon = <Image source={V} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatV} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialV} style={[style.container]} />;
+
           break;
         case "W":
-          avatarIcon = <Image source={W} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatW} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialW} style={[style.container]} />;
+
           break;
         case "X":
-          avatarIcon = <Image source={X} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatX} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialX} style={[style.container]} />;
+
           break;
         case "Y":
-          avatarIcon = <Image source={Y} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatY} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialY} style={[style.container]} />;
+
           break;
         case "Z":
-          avatarIcon = <Image source={Z} style={[style.container]} />;
+          if (theme === Avatar.Themes.Flat) avatarIcon = <Image source={FlatZ} style={[style.container]} />;
+          else avatarIcon = <Image source={MaterialZ} style={[style.container]} />;
+
           break;
       }
     } else if (typeof avatar === 'number') avatarIcon = <Image source={avatar} style={[style.container]} />;
