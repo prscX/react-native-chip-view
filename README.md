@@ -57,6 +57,7 @@ import { RNChipView } from 'react-native-chip-view'
 | `height`       | `string`     |    `40`     | Specify chip height
 | `borderRadius`       | `string`     |    `40`     | Specify container border radius
 | `ellipsizeMode`       | `string`     |    `middle`     | Specify text ellipsize mode
+| `theme`       | `number`     |    `0`     | Specify avatar icon theme, we have two themes Material: 0 and Flat: 1 
 
 
 ## Contribution
