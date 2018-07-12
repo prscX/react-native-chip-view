@@ -20,42 +20,42 @@ class RNChipView extends Component {
 
   static propTypes = {
     title: PropTypes.string,
-    titleStyle: PropTypes.oneOfType(PropTypes.number, PropTypes.object),
+    titleStyle: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
 
     avatar: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.number,
       PropTypes.object
     ]),
-    avatarStyle: PropTypes.oneOfType(PropTypes.number, PropTypes.object),
+    avatarStyle: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
 
     selectable: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.number,
       PropTypes.object
     ]),
-    selectableStyle: PropTypes.oneOfType(PropTypes.number, PropTypes.object),
+    selectableStyle: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
 
     cancelable: PropTypes.oneOfType([
       PropTypes.bool,
       PropTypes.number,
       PropTypes.object
     ]),
-    cancelabelStyle: PropTypes.oneOfType(PropTypes.number, PropTypes.object),
+    cancelabelStyle: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
 
     backgroundColor: PropTypes.string,
     minWidth: PropTypes.number,
     height: PropTypes.number,
 
-    containerStyle: PropTypes.oneOfType(PropTypes.number, PropTypes.object),
-    contentContainerStyle: PropTypes.oneOfType(
+    containerStyle: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
+    contentContainerStyle: PropTypes.oneOfType([
       PropTypes.number,
       PropTypes.object
-    ),
-    subContentContainerStyle: PropTypes.oneOfType(
+    ]),
+    subContentContainerStyle: PropTypes.oneOfType([
       PropTypes.number,
       PropTypes.object
-    ),
+    ]),
 
     theme: PropTypes.number
   };
