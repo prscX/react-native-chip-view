@@ -64,6 +64,8 @@ class RNChipView extends Component {
     avatar: true,
     selectable: false,
     cancelable: false,
+    editable: true,
+    disabled: false,
 
     theme: Avatar.Themes.Material
   };
@@ -95,7 +97,9 @@ class RNChipView extends Component {
       selectableStyle,
       cancelable,
       cancelableStyle,
-      height
+      height,
+      disabled,
+      editable
     } = this.props;
 
     let icon,
@@ -113,23 +117,25 @@ class RNChipView extends Component {
       });
     height && actionStyle.push({ width: height / 3, height: height / 3 });
 
-    if (selectable) {
-      selectableStyle && styles.push(selectableStyle);
-
+    if (!editable)
+      return null
+    else if (selectable) {
+      selectableStyle && !disabled && styles.push(selectableStyle);
       if (selectable == true)
         icon = <Image source={select} style={actionStyle} />;
       else if (typeof selectable === "number")
         icon = <Image source={selectable} style={actionStyle} />;
       else icon = selectable;
     } else if (cancelable) {
-      cancelableStyle && styles.push(cancelableStyle);
+      cancelableStyle && !disabled && styles.push(cancelableStyle);
 
       if (cancelable == true)
         icon = <Image source={cancel} style={actionStyle} />;
       else if (typeof cancelable === "number")
         icon = <Image source={cancelable} style={actionStyle} />;
       else icon = cancelable;
-    } else return null;
+    }
+    else return null;
 
     return <View style={styles}>{icon}</View>;
   }
@@ -140,7 +146,9 @@ class RNChipView extends Component {
       maxWidth,
       ellipsizeMode,
       contentContainerStyle,
-      subContentContainerStyle
+      subContentContainerStyle,
+      disabled,
+      editable
     } = this.props;
     let styles = [],
       contentContainerStyles = [],
@@ -158,9 +166,10 @@ class RNChipView extends Component {
     maxWidth && styles.push({ maxWidth: maxWidth });
 
     if (ellipsizeMode === undefined) ellipsizeMode = "middle";
+    if (disabled) { styles.push(style.disabledTitleStyle) }
 
     return (
-      <TouchableOpacity style={{ flex: 1 }} onPress={this.props.onPress}>
+    <TouchableOpacity style={{ flex: 1 }} onPress={this.props.onPress} disabled={disabled || !editable}>
         <View style={contentContainerStyles}>
           {this._renderAvatar()}
           <View style={[subStyles]}>
@@ -179,7 +188,7 @@ class RNChipView extends Component {
   }
 
   _renderContainer() {
-    let { backgroundColor, height, borderRadius, containerStyle } = this.props;
+    let { backgroundColor, height, borderRadius, containerStyle, disabled } = this.props;
 
     let styles = [];
     styles.push(style.container);
@@ -188,6 +197,8 @@ class RNChipView extends Component {
     backgroundColor && styles.push({ backgroundColor: backgroundColor });
     height && styles.push({ height: height, borderRadius: height });
     borderRadius && styles.push({ borderRadius: borderRadius });
+
+    if (disabled) styles.push(style.disabledContainer);
 
     return <View style={styles}>{this._renderContent()}</View>;
   }

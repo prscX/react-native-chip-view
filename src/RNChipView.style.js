@@ -43,6 +43,12 @@ const style = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     color: "#5f5f5f"
+  },
+  disabledContainer: {
+    backgroundColor: "#F7F7F7"
+  },
+  disabledTitleStyle: {
+    color: "#999999"
   }
 });
 
