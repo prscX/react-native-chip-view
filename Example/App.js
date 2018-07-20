@@ -54,6 +54,14 @@ export default class App extends Component<Props> {
           title={'Raj Pranav Singh Chauhan'}
         />
         <RNChipView
+          title={'Raj Pranav Singh Chauhan'}
+          disabled={true}
+        />
+        <RNChipView
+          title={'Raj Pranav Singh Chauhan'}
+          editable={false}
+        />
+        <RNChipView
           title={'Singh Pranav Raj Chauhan'}
           avatar={<Icon name="search" size={40} color="#000" />}
           selectable={true}
