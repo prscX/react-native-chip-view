@@ -54,6 +54,7 @@ import { RNChipView } from 'react-native-chip-view'
 | ----------------- | ---------- | ------- | ---------------------------------------------------------------------------------------------------------- |
 | `title`       | `string`     |        | Specify label wants to show. **Required**
 | `titleStyle`       | `object`     |         | Specify style wants to apply on title
+| `titleAllowFontScaling` | `bool`  | `true` |  Title font should scale to respect Text Size accessibility settings
 | `onPress`       | `func`     |       | Specify event handler for on press
 | `avatar`       | `bool, number, component`     |         | - Specify true in case you need avatar. - Specify avatar in case you want custom avatar
 | `avatarStyle`       | `object`     |         | Specify custom avatar style
@@ -66,7 +67,7 @@ import { RNChipView } from 'react-native-chip-view'
 | `height`       | `string`     |    `40`     | Specify chip height
 | `borderRadius`       | `string`     |    `40`     | Specify container border radius
 | `ellipsizeMode`       | `string`     |    `middle`     | Specify text ellipsize mode
-| `theme`       | `number`     |    `0`     | Specify avatar icon theme, we have two themes Material: 0 and Flat: 1 
+| `theme`       | `number`     |    `0`     | Specify avatar icon theme, we have two themes Material: 0 and Flat: 1
 
 
 
