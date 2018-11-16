@@ -21,6 +21,7 @@ class RNChipView extends Component {
   static propTypes = {
     title: PropTypes.string,
     titleStyle: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
+    titleAllowFontScaling: PropTypes.bool,
 
     avatar: PropTypes.oneOfType([
       PropTypes.bool,
@@ -66,7 +67,7 @@ class RNChipView extends Component {
     cancelable: false,
     editable: true,
     disabled: false,
-
+    titleAllowFontScaling: true,
     theme: Avatar.Themes.Material
   };
 
@@ -148,7 +149,8 @@ class RNChipView extends Component {
       contentContainerStyle,
       subContentContainerStyle,
       disabled,
-      editable
+      editable,
+      titleAllowFontScaling
     } = this.props;
     let styles = [],
       contentContainerStyles = [],
@@ -177,6 +179,7 @@ class RNChipView extends Component {
               style={[styles]}
               ellipsizeMode={ellipsizeMode}
               numberOfLines={1}
+              allowFontScaling={titleAllowFontScaling}
             >
               {this.props.title}
             </Text>
