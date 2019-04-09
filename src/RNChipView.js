@@ -150,7 +150,8 @@ class RNChipView extends Component {
       subContentContainerStyle,
       disabled,
       editable,
-      titleAllowFontScaling
+      titleAllowFontScaling,
+      disableTitleStyle
     } = this.props;
     let styles = [],
       contentContainerStyles = [],
@@ -168,7 +169,7 @@ class RNChipView extends Component {
     maxWidth && styles.push({ maxWidth: maxWidth });
 
     if (ellipsizeMode === undefined) ellipsizeMode = "middle";
-    if (disabled) { styles.push(style.disabledTitleStyle) }
+    if (disabled) { styles.push(disableTitleStyle) || styles.push(style.disabledTitleStyle) }
 
     return (
     <TouchableOpacity style={{ flex: 1 }} onPress={this.props.onPress} disabled={disabled || !editable}>
@@ -191,7 +192,7 @@ class RNChipView extends Component {
   }
 
   _renderContainer() {
-    let { backgroundColor, height, borderRadius, containerStyle, disabled } = this.props;
+    let { backgroundColor, height, borderRadius, containerStyle, disabled, disableStyle } = this.props;
 
     let styles = [];
     styles.push(style.container);
@@ -201,7 +202,7 @@ class RNChipView extends Component {
     height && styles.push({ height: height, borderRadius: height });
     borderRadius && styles.push({ borderRadius: borderRadius });
 
-    if (disabled) styles.push(style.disabledContainer);
+    if (disabled) styles.push(disableStyle) || styles.push(style.disabledContainer);
 
     return <View style={styles}>{this._renderContent()}</View>;
   }
